@@ -1,0 +1,179 @@
+:root {
+  color-scheme: light dark;
+  --ink: #1a1c1a;
+  --dim: #5a615a;
+  --rule: #dfe3df;
+  --ground: #fbfcfb;
+  --accent: #2f6b3d;
+}
+
+/* The system preference decides, unless the reader has chosen light explicitly. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e6e9e6;
+    --dim: #99a199;
+    --rule: #2b302b;
+    --ground: #111311;
+    --accent: #8fce9c;
+  }
+}
+
+/* An explicit choice of dark wins in both directions. */
+:root[data-theme="dark"] {
+  --ink: #e6e9e6;
+  --dim: #99a199;
+  --rule: #2b302b;
+  --ground: #111311;
+  --accent: #8fce9c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 40px 20px 80px;
+  background: var(--ground);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+main { max-width: 46rem; margin: 0 auto; }
+
+h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .35rem; }
+h2 { font-size: 1.15rem; margin: 2.4rem 0 .6rem; }
+h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+
+p, li { color: var(--ink); }
+ul { padding-left: 1.25rem; }
+li { margin: .3rem 0; }
+a { color: var(--accent); }
+
+.meta { color: var(--dim); font-size: .9rem; margin: 0 0 2rem; }
+.lead { font-size: 1.05rem; }
+.langs { font-size: .9rem; margin-bottom: 2.5rem; }
+.dim { color: var(--dim); }
+
+.rule { border: 0; border-top: 1px solid var(--rule); margin: 3.5rem 0; }
+
+.note {
+  border-left: 3px solid var(--accent);
+  padding: .1rem 0 .1rem 1rem;
+  margin: 1.2rem 0;
+  color: var(--dim);
+}
+
+footer { color: var(--dim); font-size: .875rem; margin-top: 3rem; }
+
+/* The front page is one short block, centred in the window rather than run from the top. */
+body.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+body.home main { max-width: 38rem; }
+body.home h1 { font-size: 2rem; margin: 0 0 .75rem; letter-spacing: .01em; }
+body.home p { margin: 0 0 1rem; }
+
+/* The mark on the left, the theme switch on the right, and the page under them. */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+/* The launcher mark, kept as one file so the app's icon and the site's never diverge. Taller than
+   wide, so the height leads everywhere and the width follows. */
+.mark { display: block; line-height: 0; }
+.mark img { height: 38px; width: auto; display: block; }
+
+/* The front page wears it full size, beside the name: the two together are the title, and the
+   description runs underneath at full width. */
+/* The mark, with the name and the way further in beside it. The description runs underneath at
+   full width — squeezed into the column next to a 300px mark it read a few words to a line. */
+.lockup { display: flex; align-items: center; gap: 2rem; margin-bottom: 2.25rem; }
+
+/* Set to the height of the name, the pronunciation, the links and the badge beside it, plus a
+   little, so the mark reads as their equal rather than as a poster they are standing next to.
+   A number, not a computed fit: adding a line to the column means nudging it here. */
+.logo { height: 245px; width: auto; display: block; flex: 0 0 auto; }
+body.home h1 { font-size: 3.5rem; margin: 0 0 .35rem; letter-spacing: .01em; line-height: 1; }
+
+/* The name is written the way it is published; this says how to say it. */
+.pronounce { color: var(--dim); font-size: .9rem; margin: 0 0 1.35rem; }
+
+.menu { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; }
+.menu ul { margin: 0; padding-left: 1.15rem; }
+.menu li { margin: 0 0 .4rem; }
+.menu li:last-child { margin-bottom: 0; }
+.menu li::marker { color: var(--accent); }
+.menu a { font-size: 1.05rem; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+.download { color: var(--dim); font-size: .95rem; margin: .4rem 0 0; }
+.download { display: flex; align-items: center; gap: .5rem; }
+.store { display: block; line-height: 0; }
+/* Google's own badge file, unmodified: the guidelines forbid recolouring or redrawing it, and ask
+   for clear space around it — hence the gap here rather than a tighter row. */
+.store img { height: 44px; width: auto; display: block; }
+
+/* Only the theme switch is left in the front page's header — it keeps to the right on its own. */
+body.home .top { justify-content: flex-end; }
+
+.theme {
+  display: block;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--dim);
+  cursor: pointer;
+  line-height: 0;
+}
+.theme:hover { color: var(--ink); border-color: var(--dim); }
+.theme svg { width: 18px; height: 18px; display: inline-block; vertical-align: middle; }
+
+/* The button shows the theme it switches to, so the moon belongs to the dark page. */
+.theme .moon { display: none; }
+:root[data-theme="dark"] .theme .moon { display: inline-block; }
+:root[data-theme="dark"] .theme .sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme .moon { display: inline-block; }
+  :root:not([data-theme="light"]) .theme .sun { display: none; }
+}
+
+/* Nothing here is wide enough to scroll sideways, and a long identifier must not make it so. */
+body { overflow-wrap: break-word; }
+code { font-size: .95em; }
+
+/* Mobile browsers grow and shrink the viewport as the address bar hides, so 100vh overshoots. */
+@supports (min-height: 100svh) {
+  body.home { min-height: 100svh; }
+}
+
+@media (max-width: 34rem) {
+  body { padding: 24px 16px 56px; font-size: 15px; }
+  body.home { padding: 32px 16px; }
+  h1 { font-size: 1.5rem; }
+  body.home h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.05rem; margin-top: 2rem; }
+  .lead { font-size: 1rem; }
+  .meta, .langs { margin-bottom: 1.5rem; }
+  .rule { margin: 2.5rem 0; }
+  ul { padding-left: 1.1rem; }
+  .note { margin: 1rem 0; padding-left: .85rem; }
+  .top { margin-bottom: 1.25rem; }
+  /* The mark stays beside the name on a narrow screen too — everything shrinks, nothing stacks. */
+  .lockup { gap: 1rem; margin-bottom: 1.75rem; }
+  .logo { height: 175px; }
+  body.home h1 { font-size: 2rem; margin-bottom: .25rem; }
+  .pronounce { font-size: .85rem; margin-bottom: .9rem; }
+  .menu { gap: .6rem; }
+  .menu li { margin-bottom: .35rem; }
+  .menu a { font-size: .95rem; }
+  .download { font-size: .88rem; gap: .45rem; }
+  .store img { height: 38px; }
+}
