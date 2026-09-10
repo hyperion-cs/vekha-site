@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vekha</title>
-<script src="theme.js"></script>
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
+<script src="theme.js?v=ddcf548"></script>
+<script src="lang.js?v=89a486b"></script>
+<script src="apk.js?v=0be1ad0" defer></script>
+<link rel="icon" href="icon.svg?v=ed4cad1" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=bedfb70">
 </head>
 <body class="home">
 <main>
@@ -20,38 +22,56 @@
     <path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/>
   </svg>
 </button>
+  <button class="lang" id="lang" type="button" aria-label="Switch to English">
+    <span lang="ru">EN</span><span lang="en">RU</span>
+  </button>
 </header>
 <div class="lockup">
-  <img class="logo" src="icon.svg" alt="" width="1012" height="1438">
+  <img class="logo" src="icon.svg?v=ed4cad1" alt="" width="1012" height="1438">
   <div>
     <h1>Vekha</h1>
-    <p class="pronounce">произносится как "Веха"</p>
+    <p class="pronounce" lang="ru">/ произносится как "Веха" /</p>
+    <p class="pronounce" lang="en">/ pronounced "VYE-ha" /</p>
     <nav class="menu">
-      <ul>
-        <li><a href="/docs">Документация</a></li>
-        <li><a href="/privacy">Политика конфиденциальности</a></li>
+      <ul lang="ru">
+        <li><a href="./docs">Документация</a></li>
+        <li><a href="./privacy#ru">Политика конфиденциальности</a></li>
       </ul>
-      <p class="download">Скачать:
+      <ul lang="en">
+        <li><a href="./docs">Documentation</a></li>
+        <li><a href="./privacy">Privacy policy</a></li>
+      </ul>
+      <p class="download">
         <a class="store" href="https://play.google.com/store/apps/details?id=land.vekha">
-          <img src="googleplaybadge.svg" alt="Доступно в Google Play" width="239" height="71">
+          <img src="googleplaybadge.svg?v=4ffa4c7" alt="Доступно в Google Play" width="239" height="71">
         </a>
+        <button class="apk" id="apk" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3.5v11M7.5 10.5 12 15l4.5-4.5M4.5 17.5v2a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-2"/>
+          </svg>APK
+        </button>
       </p>
     </nav>
   </div>
 </div>
-  <p>Навигация в сложных полевых условиях — в лесу, в поле, на бездорожье, в том числе там, где нет
-  ни дорог, ни ориентиров, ни мобильной связи. С его помощью можно выйти к отмеченным точкам и контурам и
-  записать пройденный маршрут.</p>
-  <p>Полевые измерения: обмер участков, разбивка по пикетам. Диагностика спутникового приёма и
-  датчиков устройства.</p>
-  <p>Работает без интернета, целиком на мобильном устройстве: ни учётных записей, ни рекламы, ни
-  отправки ваших данных за его пределы.</p>
-  <p class="dim">Vekha — navigation in difficult terrain: forest, open country, roadless ground,
-  including places with no roads, no landmarks and no mobile signal. It can guide you to marked points and
-  contours and record the route you walk. Field measurement: surveying plots, laying out chainage.
-  Diagnostics for satellite reception and device sensors. Runs offline, entirely on the mobile
-  device: no accounts, no ads, and none of your data leaving it.</p>
-  <!-- Сюда встанет ссылка на .apk, когда будет что скачивать помимо магазина. -->
+  <div lang="ru">
+    <p>Навигация в сложных полевых условиях — в лесу, в поле, на бездорожье, в том числе там, где нет
+    ни дорог, ни ориентиров, ни мобильной связи. С его помощью можно выйти к отмеченным точкам/контурам
+    и записать пройденный маршрут.</p>
+    <p>Полевые измерения: обмер участков, разбивка по пикетам. Диагностика спутникового приёма и
+    датчиков устройства.</p>
+    <p>Работает без интернета, целиком на мобильном устройстве: ни учётных записей, ни рекламы, ни
+    отправки ваших данных за его пределы.</p>
+  </div>
+  <div lang="en">
+    <p>Navigation in difficult terrain — forest, open country, roadless ground, including places
+    with no roads, no landmarks and no mobile signal. It can guide you to marked points and contours
+    and record the route you walk.</p>
+    <p>Field measurement: surveying plots, laying out chainage. Diagnostics for satellite reception
+    and device sensors.</p>
+    <p>Runs offline, entirely on the mobile device: no accounts, no ads, and none of your data
+    leaving it.</p>
+  </div>
 </main>
 </body>
 </html>

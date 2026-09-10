@@ -76,18 +76,19 @@ body.home main { max-width: 38rem; }
 body.home h1 { font-size: 2rem; margin: 0 0 .75rem; letter-spacing: .01em; }
 body.home p { margin: 0 0 1rem; }
 
-/* The mark on the left, the theme switch on the right, and the page under them. */
+/* One band: the mark, the page's title beside it, the theme switch at the far edge. */
 .top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
+  gap: .85rem;
+  margin-bottom: 1.75rem;
 }
+.top h1 { flex: 1; font-size: 1.6rem; margin: 0; line-height: 1.15; }
 
 /* The launcher mark, kept as one file so the app's icon and the site's never diverge. Taller than
    wide, so the height leads everywhere and the width follows. */
 .mark { display: block; line-height: 0; }
-.mark img { height: 38px; width: auto; display: block; }
+.mark img { height: 42px; width: auto; display: block; }
 
 /* The front page wears it full size, beside the name: the two together are the title, and the
    description runs underneath at full width. */
@@ -111,12 +112,31 @@ body.home h1 { font-size: 3.5rem; margin: 0 0 .35rem; letter-spacing: .01em; lin
 .menu li::marker { color: var(--accent); }
 .menu a { font-size: 1.05rem; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
-.download { color: var(--dim); font-size: .95rem; margin: .4rem 0 0; }
-.download { display: flex; align-items: center; gap: .5rem; }
+.download { display: flex; align-items: center; gap: .6rem; margin: .4rem 0 0; }
 .store { display: block; line-height: 0; }
 /* Google's own badge file, unmodified: the guidelines forbid recolouring or redrawing it, and ask
    for clear space around it — hence the gap here rather than a tighter row. */
 .store img { height: 44px; width: auto; display: block; }
+
+/* Beside the badge, never above it: Google asks that its badge be no smaller than any other store
+   button shown alongside, so this one matches its height and stays quieter in weight. */
+.apk {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  height: 44px;
+  padding: 0 .9rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: .95rem;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+.apk:hover { border-color: var(--dim); color: var(--accent); }
+.apk svg { width: 18px; height: 18px; flex: 0 0 auto; }
 
 /* Only the theme switch is left in the front page's header — it keeps to the right on its own. */
 body.home .top { justify-content: flex-end; }
@@ -134,6 +154,27 @@ body.home .top { justify-content: flex-end; }
   line-height: 0;
 }
 .theme:hover { color: var(--ink); border-color: var(--dim); }
+
+/* Two languages live in the page at once; the root says which one is on show. */
+:root[data-lang="ru"] [lang="en"] { display: none; }
+:root[data-lang="en"] [lang="ru"] { display: none; }
+
+/* Same square as the theme switch, and it too shows what it switches to. */
+.lang {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--dim);
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+.lang:hover { color: var(--ink); border-color: var(--dim); }
 .theme svg { width: 18px; height: 18px; display: inline-block; vertical-align: middle; }
 
 /* The button shows the theme it switches to, so the moon belongs to the dark page. */
@@ -165,7 +206,12 @@ code { font-size: .95em; }
   .rule { margin: 2.5rem 0; }
   ul { padding-left: 1.1rem; }
   .note { margin: 1rem 0; padding-left: .85rem; }
-  .top { margin-bottom: 1.25rem; }
+  /* Beside the mark and the switch a long title has a couple of words to a line, so it drops
+     under them and takes the full width. */
+  .top { flex-wrap: wrap; gap: .6rem; margin-bottom: 1.25rem; }
+  .top .mark { margin-right: auto; }
+  .top h1 { order: 3; flex: 1 0 100%; font-size: 1.5rem; }
+  .mark img { height: 36px; }
   /* The mark stays beside the name on a narrow screen too — everything shrinks, nothing stacks. */
   .lockup { gap: 1rem; margin-bottom: 1.75rem; }
   .logo { height: 175px; }
@@ -174,6 +220,8 @@ code { font-size: .95em; }
   .menu { gap: .6rem; }
   .menu li { margin-bottom: .35rem; }
   .menu a { font-size: .95rem; }
-  .download { font-size: .88rem; gap: .45rem; }
+  .download { gap: .45rem; }
+  .apk { height: 38px; padding: 0 .7rem; font-size: .9rem; }
+  .apk svg { width: 16px; height: 16px; }
   .store img { height: 38px; }
 }

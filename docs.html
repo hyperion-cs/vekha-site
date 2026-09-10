@@ -4,17 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Документация — Vekha</title>
-<script src="theme.js"></script>
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
+<script src="theme.js?v=ddcf548"></script>
+<script src="lang.js?v=89a486b"></script>
+<link rel="icon" href="icon.svg?v=ed4cad1" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=bedfb70">
 </head>
 <body>
 <main>
 
 <header class="top">
-  <a class="mark" href="/" aria-label="Vekha">
-    <img src="icon.svg" alt="" width="1012" height="1438">
+  <a class="mark" href="./" aria-label="Vekha">
+    <img src="icon.svg?v=ed4cad1" alt="" width="1012" height="1438">
   </a>
+  <h1 lang="ru">Документация</h1>
+  <h1 lang="en">Documentation</h1>
   <button class="theme" id="theme" type="button" aria-label="Светлая или тёмная тема">
   <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
     <circle cx="12" cy="12" r="4.2"/>
@@ -24,17 +27,25 @@
     <path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/>
   </svg>
 </button>
+  <button class="lang" id="lang" type="button" aria-label="Switch to English">
+    <span lang="ru">EN</span><span lang="en">RU</span>
+  </button>
 </header>
 
-<h1>Документация</h1>
-<p class="meta">Приложение "Vekha" ("Веха") для Android.</p>
+<div lang="ru">
+  <p class="meta">Приложение Vekha для Android</p>
+  <p class="lead">Раздел готовится. Здесь появится описание того, как приложение устроено и как им
+  пользоваться.</p>
+  <p><a href="./">На главную</a></p>
+</div>
+<div lang="en">
+  <p class="meta">Vekha for Android</p>
+  <p class="lead">This section is being written. It will describe how the app works and how to use
+  it.</p>
+  <p><a href="./">Home</a></p>
+</div>
 
-<p class="lead">Раздел готовится. Здесь появится описание того, как приложение устроено и как им
-пользоваться.</p>
-
-<p><a href="/">На главную</a></p>
-
-<footer>Vekha / Веха — <a href="/">vekha.land</a></footer>
+<footer>Vekha / Веха — <a href="./">vekha.land</a></footer>
 
 </main>
 </body>

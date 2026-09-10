@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Политика конфиденциальности — Vekha</title>
-<script src="theme.js"></script>
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
+<title>Privacy Policy — Vekha</title>
+<script src="theme.js?v=ddcf548"></script>
+<link rel="icon" href="icon.svg?v=ed4cad1" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=bedfb70">
 </head>
 <body>
 <main>
 
 <header class="top">
-  <a class="mark" href="/" aria-label="Vekha">
-    <img src="icon.svg" alt="" width="1012" height="1438">
+  <a class="mark" href="./" aria-label="Vekha">
+    <img src="icon.svg?v=ed4cad1" alt="" width="1012" height="1438">
   </a>
+<h1 id="en">Privacy Policy</h1>
   <button class="theme" id="theme" type="button" aria-label="Светлая или тёмная тема">
   <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
     <circle cx="12" cy="12" r="4.2"/>
@@ -25,11 +26,110 @@
   </svg>
 </button>
 </header>
+<p class="meta">"Vekha" ("Веха") for Android, application ID <code>land.vekha</code>.<br>
+Effective 10 September 2026.</p>
+<p class="langs"><a href="#ru">Русская версия ниже</a></p>
+
+<p class="lead">Vekha is an app for navigating difficult terrain: forest, open country, roadless
+ground, including places with no roads, no landmarks and no mobile signal. It can guide you to marked
+points and contours, record the route you walk, and carry out field measurement — surveying plots,
+laying out chainage — of the kind cadastral engineers and surveyors need. A separate part of it diagnoses
+satellite reception and the device's own sensors: accelerometer, magnetometer, gyroscope, barometer
+and rotation vector.</p>
+<p class="lead">The app runs entirely on your mobile device. It has no accounts, no ads, no analytics, and it
+sends your data to nobody — us included.</p>
+
+<div class="note">
+The app does not request internet access. Sending data anywhere is therefore something it cannot
+do, not merely something it chooses not to do.
+</div>
+
+<h2>What data the app uses</h2>
+
+<h3>Location</h3>
+<p>Precise location (satellite and network) underlies everything the app does. It shows your
+position on the map, records the route you walk, and works out distances and bearings to the points you mark.
+Recording continues with the screen off while a route is running, which is what the foreground
+service and its ongoing notification are for.</p>
+<p>Coordinates are stored in the app's database on your device. They go nowhere else.</p>
+
+<h3>Satellite system data</h3>
+<p>The app reads the device's satellite receiver diagnostics: which satellites are visible, where they are in the sky,
+signal strength, raw measurements. This is used to judge how trustworthy a position is and to show
+reception quality. Some of it is stored alongside route points on the device.</p>
+<p>The same readings let the app recognise jamming and spoofing of the satellite signal: reception
+disappearing while the receiver itself is healthy, and jumps in position that movement cannot
+account for. Points that raise doubt are flagged and left out of a route's figures. All of these
+checks run on the device itself — neither the readings nor their verdict is reported anywhere.</p>
+
+<h3>Device sensors</h3>
+<p>The accelerometer, magnetometer, gyroscope, barometer and the system's computed rotation vector
+are used to work out heading, device tilt and altitude. Their readings are processed as they arrive
+and not accumulated separately — apart from air pressure and altitude, which are recorded with route
+points.</p>
+
+<h3>Notifications</h3>
+<p>The notification permission is used only to show in the shade that the app is active. On some
+devices this lowers the chance that the system optimiser will stop the background service. The app
+sends no other notifications.</p>
+
+<h2>What the app does not do</h2>
+<ul>
+  <li>it does not send data to any server, ours or anyone else's;</li>
+  <li>it contains no advertising, analytics, trackers or third-party data-collecting libraries;</li>
+  <li>it requires no registration and creates no accounts;</li>
+  <li>it does not read your contacts, calls, messages or photos, and does not look inside other apps;</li>
+  <li>it does not track you across apps or websites and builds no advertising profile.</li>
+</ul>
+
+<h2>Where data is kept and who can reach it</h2>
+<p>Everything the app saves — routes, markers, contours, settings and the rest — lives in its own
+protected storage on the device. Android isolates that storage: other apps cannot read it.</p>
+<p>Only you, as the owner of the device, can reach this data. The developer cannot: none of it ever
+arrives.</p>
+
+<h2>When you share data yourself</h2>
+<p>The app can export your geometry, route history, settings and other data to a file and hand it
+to whatever destination you pick — a messenger, cloud storage, anything. Data can also be copied to the clipboard and pasted back from
+it.</p>
+<p>All of this happens only on your command and only to the recipient you choose. Once a file has left the
+app it is governed by the rules of the service you sent it to, and is beyond our reach.</p>
+
+<h2>Data security</h2>
+<p>The app relies on Android's own protections: the isolated application sandbox and device
+encryption.</p>
+<p>Data copied to the clipboard is flagged as sensitive so the system does not reveal it in its
+preview.</p>
+
+<h2>Retention and deletion</h2>
+<p>Data is kept until you delete it. There are no retention periods and no automatic clean-up.</p>
+<ul>
+  <li>an individual route, marker or contour can be deleted inside the app;</li>
+  <li>uninstalling the app erases everything it saved. This cannot be undone, because no backup
+      exists on the developer's side.</li>
+</ul>
+
+<h2>Children</h2>
+<p>The app is suitable from age 6: it carries no advertising, no in-app purchases, and no material
+that would call for an age restriction. It never asks for or stores an age, and requests no personal
+details from anyone — adult or child.</p>
+<p>The data practices described above are the same for everyone: nothing is collected and nothing is
+transmitted, so no separate arrangement for children is needed.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the app ever begins handling data differently, this page will be updated before that change
+ships in a new version, and the date at the top will change with it.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:support@vekha.land">support@vekha.land</a></p>
+
+<hr class="rule">
 
 <h1 id="ru">Политика конфиденциальности</h1>
+
 <p class="meta">Приложение "Vekha" ("Веха"), идентификатор <code>land.vekha</code>, для Android.<br>
 Действует с 10 сентября 2026 года.</p>
-<p class="langs"><a href="#en">English version below</a></p>
+<p class="langs"><a href="#en">English version above</a></p>
 
 <p class="lead">Веха — приложение для навигации в сложных полевых условиях: в лесу, в поле, на
 бездорожье, в том числе там, где нет ни дорог, ни ориентиров, ни мобильной связи. С его помощью можно выйти
@@ -127,107 +227,7 @@
 <h2>Связь</h2>
 <p>Вопросы по этой политике: <a href="mailto:support@vekha.land">support@vekha.land</a></p>
 
-<hr class="rule">
-
-<h1 id="en">Privacy Policy</h1>
-<p class="meta">"Vekha" ("Веха") for Android, application ID <code>land.vekha</code>.<br>
-Effective 10 September 2026.</p>
-<p class="langs"><a href="#ru">Русская версия выше</a></p>
-
-<p class="lead">Vekha is an app for navigating difficult terrain: forest, open country, roadless
-ground, including places with no roads, no landmarks and no mobile signal. It can guide you to marked
-points and contours, record the route you walk, and carry out field measurement — surveying plots,
-laying out chainage — of the kind cadastral engineers and surveyors need. A separate part of it diagnoses
-satellite reception and the device's own sensors: accelerometer, magnetometer, gyroscope, barometer
-and rotation vector.</p>
-<p class="lead">The app runs entirely on your mobile device. It has no accounts, no ads, no analytics, and it
-sends your data to nobody — us included.</p>
-
-<div class="note">
-The app does not request internet access. Sending data anywhere is therefore something it cannot
-do, not merely something it chooses not to do.
-</div>
-
-<h2>What data the app uses</h2>
-
-<h3>Location</h3>
-<p>Precise location (satellite and network) underlies everything the app does. It shows your
-position on the map, records the route you walk, and works out distances and bearings to the points you mark.
-Recording continues with the screen off while a route is running, which is what the foreground
-service and its ongoing notification are for.</p>
-<p>Coordinates are stored in the app's database on your device. They go nowhere else.</p>
-
-<h3>Satellite system data</h3>
-<p>The app reads the device's satellite receiver diagnostics: which satellites are visible, where they are in the sky,
-signal strength, raw measurements. This is used to judge how trustworthy a position is and to show
-reception quality. Some of it is stored alongside route points on the device.</p>
-<p>The same readings let the app recognise jamming and spoofing of the satellite signal: reception
-disappearing while the receiver itself is healthy, and jumps in position that movement cannot
-account for. Points that raise doubt are flagged and left out of a route's figures. All of these
-checks run on the device itself — neither the readings nor their verdict is reported anywhere.</p>
-
-<h3>Device sensors</h3>
-<p>The accelerometer, magnetometer, gyroscope, barometer and the system's computed rotation vector
-are used to work out heading, device tilt and altitude. Their readings are processed as they arrive
-and not accumulated separately — apart from air pressure and altitude, which are recorded with route
-points.</p>
-
-<h3>Notifications</h3>
-<p>The notification permission is used only to show in the shade that the app is active. On some
-devices this lowers the chance that the system optimiser will stop the background service. The app
-sends no other notifications.</p>
-
-<h2>What the app does not do</h2>
-<ul>
-  <li>it does not send data to any server, ours or anyone else's;</li>
-  <li>it contains no advertising, analytics, trackers or third-party data-collecting libraries;</li>
-  <li>it requires no registration and creates no accounts;</li>
-  <li>it does not read your contacts, calls, messages or photos, and does not look inside other apps;</li>
-  <li>it does not track you across apps or websites and builds no advertising profile.</li>
-</ul>
-
-<h2>Where data is kept and who can reach it</h2>
-<p>Everything the app saves — routes, markers, contours, settings and the rest — lives in its own
-protected storage on the device. Android isolates that storage: other apps cannot read it.</p>
-<p>Only you, as the owner of the device, can reach this data. The developer cannot: none of it ever
-arrives.</p>
-
-<h2>When you share data yourself</h2>
-<p>The app can export your geometry, route history, settings and other data to a file and hand it
-to whatever destination you pick — a messenger, cloud storage, anything. Data can also be copied to the clipboard and pasted back from
-it.</p>
-<p>All of this happens only on your command and only to the recipient you choose. Once a file has left the
-app it is governed by the rules of the service you sent it to, and is beyond our reach.</p>
-
-<h2>Data security</h2>
-<p>The app relies on Android's own protections: the isolated application sandbox and device
-encryption.</p>
-<p>Data copied to the clipboard is flagged as sensitive so the system does not reveal it in its
-preview.</p>
-
-<h2>Retention and deletion</h2>
-<p>Data is kept until you delete it. There are no retention periods and no automatic clean-up.</p>
-<ul>
-  <li>an individual route, marker or contour can be deleted inside the app;</li>
-  <li>uninstalling the app erases everything it saved. This cannot be undone, because no backup
-      exists on the developer's side.</li>
-</ul>
-
-<h2>Children</h2>
-<p>The app is suitable from age 6: it carries no advertising, no in-app purchases, and no material
-that would call for an age restriction. It never asks for or stores an age, and requests no personal
-details from anyone — adult or child.</p>
-<p>The data practices described above are the same for everyone: nothing is collected and nothing is
-transmitted, so no separate arrangement for children is needed.</p>
-
-<h2>Changes to this policy</h2>
-<p>If the app ever begins handling data differently, this page will be updated before that change
-ships in a new version, and the date at the top will change with it.</p>
-
-<h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:support@vekha.land">support@vekha.land</a></p>
-
-<footer>Vekha / Веха — <a href="/">vekha.land</a></footer>
+<footer>Vekha / Веха — <a href="./">vekha.land</a></footer>
 
 </main>
 </body>
